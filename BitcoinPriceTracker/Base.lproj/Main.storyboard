@@ -1,24 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.14" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9xR-oT-EWf">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--BitcoinTracker-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BitcoinPriceTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Cdn-xZ-q5p">
+                                <rect key="frame" x="16" y="116" width="288" height="37"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sRB-tO-yP2">
+                                <rect key="frame" x="40" y="461.5" width="240" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="+1" translatesAutoresizingMaskIntoConstraints="NO" id="p4Z-Jc-1BO">
+                                <rect key="frame" x="40" y="176.5" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="p4Z-Jc-1BO" secondAttribute="height" multiplier="1:1" id="Wfl-1d-U9O"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pab-oh-cZz">
+                                <rect key="frame" x="40" y="490.5" width="240" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="p4Z-Jc-1BO" firstAttribute="top" secondItem="Cdn-xZ-q5p" secondAttribute="bottom" constant="23.5" id="QGd-Sh-uxY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p4Z-Jc-1BO" secondAttribute="trailing" constant="40" id="QNg-AK-wOD"/>
+                            <constraint firstItem="sRB-tO-yP2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="VmT-Yr-mwz"/>
+                            <constraint firstItem="Cdn-xZ-q5p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Vnc-HG-aJL"/>
+                            <constraint firstItem="Cdn-xZ-q5p" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="52" id="XLg-Vj-OFi"/>
+                            <constraint firstItem="Pab-oh-cZz" firstAttribute="top" secondItem="sRB-tO-yP2" secondAttribute="bottom" constant="8" id="ayg-3t-itY"/>
+                            <constraint firstItem="Pab-oh-cZz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="fla-uS-b7a"/>
+                            <constraint firstItem="sRB-tO-yP2" firstAttribute="top" secondItem="p4Z-Jc-1BO" secondAttribute="bottom" constant="45" id="kmk-N6-p3c"/>
+                            <constraint firstItem="p4Z-Jc-1BO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="qMn-Hg-hhX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sRB-tO-yP2" secondAttribute="trailing" constant="40" id="ryb-g1-78A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cdn-xZ-q5p" secondAttribute="trailing" constant="16" id="zDc-kV-VTI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pab-oh-cZz" secondAttribute="trailing" constant="40" id="znZ-Ii-Fcw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="BitcoinTracker" id="VZA-x4-czA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="4fU-Gh-4K8">
+                            <connections>
+                                <action selector="refreshTapped:" destination="BYZ-38-t0r" id="iRQ-Eg-949"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="lbBitcoinEUR" destination="sRB-tO-yP2" id="q6Q-nd-70c"/>
+                        <outlet property="lbBitcoinJPY" destination="Pab-oh-cZz" id="3zW-yO-BEs"/>
+                        <outlet property="lbBitcoinUSD" destination="Cdn-xZ-q5p" id="SyB-jT-hmB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1113.75" y="117.25352112676056"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZXx-f8-X3g">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9xR-oT-EWf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7hu-uI-oTQ">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7Yr-Pl-KzL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PS9-z1-vJ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116.25" y="786.97183098591552"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="+1" width="35" height="31"/>
+    </resources>
 </document>
